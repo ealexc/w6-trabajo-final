@@ -4,6 +4,7 @@ const routerCategory = require('./category.router');
 const routerProduct = require('./product.router');
 const { verifyJwt } = require('../utils/verifyJWT');
 const routerCart = require('./cart.router');
+const routerPurchase = require('./purchase.router');
 const router = express.Router();
 
 router.use('/users', routerUser)
@@ -14,4 +15,5 @@ router.use('/products', routerProduct)
 
 router.use('/cart', verifyJwt, routerCart)
 
+router.use('/purchase', verifyJwt, routerPurchase)
 module.exports = router;
