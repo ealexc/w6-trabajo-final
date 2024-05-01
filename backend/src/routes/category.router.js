@@ -6,7 +6,7 @@ const routerCategory = express.Router();
 
 routerCategory.route('/')
     .get(getAll)
-    .post(verifyJwt,create);
+    .post(verifyJwt, create);
 
 routerCategory.route('/:id')
     .delete( verifyJwt, remove)
