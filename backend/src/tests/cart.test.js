@@ -56,7 +56,7 @@ test("POST -> 'URL_BASE', should return status code 201, and res.body.quantity =
 })
 
 
-test("GET -> URL_BASE, should return statusCode 200, and res.body.lenght === 1", async () => {
+test("GET -> URL_BASE, should return statusCode 200 and res.body.lenght === 1", async () => {
 
   const res = await request(app)
     .get(URL_BASE)
@@ -68,7 +68,7 @@ test("GET -> URL_BASE, should return statusCode 200, and res.body.lenght === 1",
 
 })
 
-test('GET -> URL_BASE/:id shoould return statusCode 200, and res.body.quantity ==== cart.quantity', async () => {
+test('GET ONE -> URL_BASE/:id shoould return statusCode 200, and res.body.quantity ==== cart.quantity', async () => {
 
   const res = await request(app)
     .get(`${URL_BASE}/${cartId}`)
@@ -102,5 +102,5 @@ test("Delete 'URL_BASE/:id', should return statusCode 204", async () => {
 
   expect(res.statusCode).toBe(204)
 
-  await product.destroy() //! siempre al final del archivo, el ultimo test del mismo
+  await product.destroy()
 })
